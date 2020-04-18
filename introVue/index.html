@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inrto to vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <link rel="stylesheet" href="./product_style.css">
+</body>
+    
+</head>
+</head>
+<body>
+    <div class="nav-bar"></div>
+    <div id="app">
+        <div class="product">
+            <div class="product-image">
+                <img :src="image">
+            </div>
+            <div class="product-info">
+                <h1>{{ product }} </h1>
+                <p v-if="onSale">{{ saleText }}</p>
+
+                <p v-if="inventory > 10">In Stock</p>
+                <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+                <p v-else>Out of Stock</p>
+                <button v-on:click="sale()">sale</button>
+            </div>
+           
+        </div>
+       
+    </div>
+    
+    <script src="./main.js"></script>
+</html>

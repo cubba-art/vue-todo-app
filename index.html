@@ -11,9 +11,9 @@
         <h1>Todo App</h1>
         <input type="text" 
             v-model="inputText"
-            v-on:keyup.enter="addItem">
+            v-on:keyup.enter="addItem" >
 
-        <button v-on:click="fetchItems">list fetch</button>
+        <button v-on:click="fetchItems" v-bind:title="altText">list fetch</button>
 
         <div>
             <ul>
@@ -29,7 +29,8 @@
             el: '#app',
             data: {
                 inputText: '',
-                todoItems: []
+                todoItems: [],
+                altText: 'aaaa'
             },
             created: function(){
                  this.fetchItems();   
