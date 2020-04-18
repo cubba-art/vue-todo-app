@@ -12,7 +12,7 @@
         <input type="text" 
             v-model="inputText"
             v-on:keyup.enter="addItem">
-        <button v-on:click="fetchItems">add</button>
+        <button v-on:click="fetchItems">list fetch</button>
         <div>
             <ul>
                 <li v-for="(todoItem, index) in todoItems">
