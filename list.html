@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <ul id="app">
+        <li v-for='(no, i) in arr'>
+            <button @click='remove(i)'>X</button>{{ no }}
+        </li>
+        <li>
+            <button @click='append(1)'>+1</button>
+            <button @click='append(3)'>+3</button>
+            <button @click='append(5)'>+5</button>
+        </li>
+    </ul>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                arr: [],
+                cur: 0
+            },
+            methods: {
+                append: function(x){
+                    for(var i=0;i < x; i++){
+                        this.arr.push(++this.cur);
+                    }
+                },
+                remove: function(idx){
+                    this.arr.splice(idx, 1);
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
