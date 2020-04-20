@@ -38,10 +38,8 @@ Vue.component('product',{
             >
           Add to cart
           </button>
-
-       </div>  
-
-       <div>
+          
+          <div>
             <p v-if="!reviews.length">There are no reviews yet.</p>
             <ul v-else>
                 <li v-for="(review, index) in reviews" :key="index">
@@ -53,6 +51,10 @@ Vue.component('product',{
         </div>
          
          <product-review @review-submitted="addReview"></product-review>
+         
+       </div>  
+
+       
     </div>
    `,
    data() {
