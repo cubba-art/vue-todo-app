@@ -11,3 +11,5 @@
 # Vue Mastery
 
 - intro to vue.js (https://cubba-art.github.io/vue-todo-app/introVue/index.html)
+
+- intro to vue2.js (https://cubba-art.github.io/vue-todo-app/introVue/index2.html)
