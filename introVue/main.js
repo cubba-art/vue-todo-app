@@ -32,7 +32,7 @@ var app = new Vue({
         }
     },
     computed: {
-        title() {
+        title: function () {
             return this.brand + ' ' + this.product;        
         },
         image() {
