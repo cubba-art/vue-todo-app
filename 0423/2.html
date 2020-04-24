@@ -22,20 +22,21 @@
             is="todo-item"
             v-for="(todo, index) in todos"
             v-bind:key="todo.id"
-            v-bind:title2="todo.title"
-            v-on:remove="todos.splice(index, 1)"
+            v-bind:index="index"
+            v-bind:title="todo.title"
+            v-on:remove="deleteTodo"
           ></li>
         </ul>
       </div>
       <script>
-          Vue.component('todo-item', {
-            template: '\
-                <li>\
-                {{ title2 }}\
-                <button v-on:click="$emit(\'remove\')">Remove</button>\
-                </li>\
-            ',
-            props: ['title2']
+            Vue.component('todo-item', {
+                template: '\
+                    <li>\
+                    {{ title }}\
+                    <button v-on:click="$emit(\'remove\', index)">Remove</button>\
+                    </li>\
+                ',
+                props: ['title', 'index']
             })
 
             new Vue({
@@ -67,9 +68,13 @@
                         })
                         this.newTodoText = ''
                     }
+                },
+                deleteTodo: function(v){
+                    this.todos.splice(v, 1);
                 }
             }
         })
+
       </script>
 </body>
 </html>
