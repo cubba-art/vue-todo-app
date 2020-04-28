@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="todo-list-example">
+        <input v-on:keyup.enter="alertMsg" v-model="msg">
         <form v-on:submit.prevent="addNewTodo">
           <label for="new-todo">Add a todo</label>
           <input
@@ -27,19 +28,19 @@
             v-on:remove="deleteTodo"
           ></li>
         </ul>
-      </div>
-      <script>
-            Vue.component('todo-item', {
-                template: '\
-                    <li>\
-                    {{ title }}\
-                    <button v-on:click="$emit(\'remove\', index)">Remove</button>\
-                    </li>\
-                ',
-                props: ['title', 'index']
-            })
+    </div>
+    <script>
+        Vue.component('todo-item', {
+            template: '\
+                <li>\
+                {{ title }}\
+                <button v-on:click="$emit(\'remove\', index)">Remove</button>\
+                </li>\
+            ',
+            props: ['title', 'index']
+        })
 
-            new Vue({
+        new Vue({
             el: '#todo-list-example',
             data: {
                 newTodoText: '',
@@ -57,7 +58,8 @@
                     title: 'Mow the lawn'
                 }
                 ],
-                nextTodoId: 4
+                nextTodoId: 4,
+                msg: ''
             },
             methods: {
                 addNewTodo: function () {
@@ -71,10 +73,12 @@
                 },
                 deleteTodo: function(v){
                     this.todos.splice(v, 1);
+                },
+                alertMsg: function(){
+                    alert(this.msg);
                 }
             }
-        })
-
-      </script>
+        });
+    </script>
 </body>
 </html>
