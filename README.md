@@ -26,6 +26,3 @@
 - 1 (https://cubba-art.github.io/vue-todo-app/0423/1.html)
 - 2 (https://cubba-art.github.io/vue-todo-app/0423/2.html)
  
- 
-
-<u>밑줄</u>  
